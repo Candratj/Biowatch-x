@@ -204,12 +204,10 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            padding-left: 0.5rem;
         }
 
         .submenu.open {
-            max-height: 500px;
-            padding-top: 0.5rem;
+            max-height: 200px;
         }
 
         .submenu-item {
@@ -431,61 +429,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="toggleNotifikasiDropdown(event)"
+                        <a href="#"
                             class="flex items-center p-3 rounded-xl transition-smooth hover-lift menu-inactive">
                             <i class="fas fa-bell w-5 h-5"></i>
                             <span class="ml-3 font-medium">Notifikasi Alat</span>
-                            <i class="fas fa-chevron-down ml-auto text-xs dropdown-arrow" id="notifikasi-arrow"></i>
+                            <i class="fas fa-chevron-down ml-auto text-xs"></i>
                         </a>
-                        <!-- Dropdown Menu -->
-                        <div id="notifikasi-dropdown" class="submenu">
-                            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mx-2 mt-2 p-4">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between py-2">
-                                        <div class="flex items-center">
-                                            <div class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                                            <span class="text-sm text-gray-600">Sensor 1</span>
-                                        </div>
-                                        <span class="px-2 py-1 text-xs font-medium bg-emerald-100 text-emerald-800 rounded-full">online</span>
-                                    </div>
-                                    <div class="flex items-center justify-between py-2">
-                                        <div class="flex items-center">
-                                            <div class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                                            <span class="text-sm text-gray-600">Sensor 2</span>
-                                        </div>
-                                        <span class="px-2 py-1 text-xs font-medium bg-emerald-100 text-emerald-800 rounded-full">online</span>
-                                    </div>
-                                    <div class="flex items-center justify-between py-2">
-                                        <div class="flex items-center">
-                                            <div class="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
-                                            <span class="text-sm text-gray-600">Sensor 3</span>
-                                        </div>
-                                        <span class="px-2 py-1 text-xs font-medium bg-red-100 text-red-800 rounded-full">offline</span>
-                                    </div>
-                                    <div class="flex items-center justify-between py-2">
-                                        <div class="flex items-center">
-                                            <div class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                                            <span class="text-sm text-gray-600">Sensor 4</span>
-                                        </div>
-                                        <span class="px-2 py-1 text-xs font-medium bg-emerald-100 text-emerald-800 rounded-full">online</span>
-                                    </div>
-                                    <div class="flex items-center justify-between py-2">
-                                        <div class="flex items-center">
-                                            <div class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                                            <span class="text-sm text-gray-600">Sensor 5</span>
-                                        </div>
-                                        <span class="px-2 py-1 text-xs font-medium bg-emerald-100 text-emerald-800 rounded-full">online</span>
-                                    </div>
-                                    <div class="flex items-center justify-between py-2">
-                                        <div class="flex items-center">
-                                            <div class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                                            <span class="text-sm text-gray-600">Sensor 6</span>
-                                        </div>
-                                        <span class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">warning</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </li>
                     <li>
                         <a href="#"
@@ -850,23 +799,6 @@
     <!-- Scripts -->
     <script>
         let sidebarOpen = false;
-        let notifikasiDropdownOpen = false;
-
-        function toggleNotifikasiDropdown(event) {
-            event.preventDefault();
-            const dropdown = document.getElementById('notifikasi-dropdown');
-            const arrow = document.getElementById('notifikasi-arrow');
-            
-            if (notifikasiDropdownOpen) {
-                dropdown.classList.remove('open');
-                arrow.classList.remove('rotated');
-            } else {
-                dropdown.classList.add('open');
-                arrow.classList.add('rotated');
-            }
-            
-            notifikasiDropdownOpen = !notifikasiDropdownOpen;
-        }
 
         function toggleUserDropdown() {
             const dropdown = document.getElementById('user-dropdown');
@@ -916,16 +848,6 @@
                 setTimeout(() => {
                     dropdown.classList.add('hidden');
                 }, 200);
-            }
-
-            // Close notifikasi dropdown when clicking outside
-            const notifikasiDropdown = document.getElementById('notifikasi-dropdown');
-            const notifikasiButton = event.target.closest('a[onclick="toggleNotifikasiDropdown(event)"]');
-            
-            if (!notifikasiButton && notifikasiDropdown && !notifikasiDropdown.contains(event.target)) {
-                notifikasiDropdown.classList.remove('open');
-                document.getElementById('notifikasi-arrow').classList.remove('rotated');
-                notifikasiDropdownOpen = false;
             }
         });
 
