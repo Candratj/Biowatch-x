@@ -19,5 +19,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        
+        // TAMBAHKAN INI - Panggil UserSeeder untuk membuat admin
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 }
