@@ -1,204 +1,148 @@
 {{-- Status Sensor --}}
-<section id="status-sensor"
-    class="relative max-w-7xl mx-auto px-4 py-12 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
-    <div class="text-center mb-12 transform transition-all duration-500 hover:scale-105">
-        <span
-            class="inline-block bg-gradient-to-r from-emerald-100 to-teal-200 text-emerald-800 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-            Sistem Sensor
-        </span>
-        <h2
-            class="text-4xl font-bold bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent mt-3 relative group">
-            Status Sensor (8 Unit)
-            <span
-                class="absolute -bottom-2 left-1/2 w-0 h-1 bg-gradient-to-r from-emerald-600 to-teal-500 group-hover:w-48 transition-all duration-300 transform -translate-x-1/2"></span>
-        </h2>
-        <p class="text-emerald-800 mt-6 max-w-2xl mx-auto transition-all duration-300 hover:text-emerald-900">
-            Pantau kondisi setiap unit sensor secara real-time dan interaktif.
-        </p>
+<div class="mb-6">
+    <h2 class="text-xl font-semibold mb-4 text-white">Status Sensor</h2>
+    
+    <!-- Mobile: 2 columns, Desktop: 4 columns -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        
+        <!-- Sensor A1 - Active -->
+        <div class="glass-effect rounded-xl p-4 transition-all duration-300 hover:scale-105 sensor-card">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                    <span class="font-semibold text-sm md:text-base text-white">Sensor A1</span>
+                </div>
+                <i class="fas fa-signal text-green-500 text-sm"></i>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm mb-2">Blok A</p>
+            <div class="bg-green-500 bg-opacity-20 text-green-400 px-2 py-1 rounded text-xs font-medium text-center">
+                ✓ AKTIF
+            </div>
+        </div>
+
+        <!-- Sensor B2 - Active -->
+        <div class="glass-effect rounded-xl p-4 transition-all duration-300 hover:scale-105 sensor-card">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                    <span class="font-semibold text-sm md:text-base text-white">Sensor B2</span>
+                </div>
+                <i class="fas fa-signal text-green-500 text-sm"></i>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm mb-2">Blok B</p>
+            <div class="bg-green-500 bg-opacity-20 text-green-400 px-2 py-1 rounded text-xs font-medium text-center">
+                ✓ AKTIF
+            </div>
+        </div>
+
+        <!-- Sensor C3 - Offline -->
+        <div class="glass-effect rounded-xl p-4 transition-all duration-300 hover:scale-105 sensor-card opacity-75">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                    <span class="font-semibold text-sm md:text-base text-white">Sensor C3</span>
+                </div>
+                <i class="fas fa-signal-slash text-red-500 text-sm"></i>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm mb-2">Blok C</p>
+            <div class="bg-red-500 bg-opacity-20 text-red-400 px-2 py-1 rounded text-xs font-medium text-center">
+                ✗ OFFLINE
+            </div>
+        </div>
+
+        <!-- Sensor D4 - Active -->
+        <div class="glass-effect rounded-xl p-4 transition-all duration-300 hover:scale-105 sensor-card">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                    <span class="font-semibold text-sm md:text-base text-white">Sensor D4</span>
+                </div>
+                <i class="fas fa-signal text-green-500 text-sm"></i>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm mb-2">Blok D</p>
+            <div class="bg-green-500 bg-opacity-20 text-green-400 px-2 py-1 rounded text-xs font-medium text-center">
+                ✓ AKTIF
+            </div>
+        </div>
+
+        <!-- Sensor E5 - Active -->
+        <div class="glass-effect rounded-xl p-4 transition-all duration-300 hover:scale-105 sensor-card">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                    <span class="font-semibold text-sm md:text-base text-white">Sensor E5</span>
+                </div>
+                <i class="fas fa-signal text-green-500 text-sm"></i>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm mb-2">Blok E</p>
+            <div class="bg-green-500 bg-opacity-20 text-green-400 px-2 py-1 rounded text-xs font-medium text-center">
+                ✓ AKTIF
+            </div>
+        </div>
+
+        <!-- Sensor F6 - Offline -->
+        <div class="glass-effect rounded-xl p-4 transition-all duration-300 hover:scale-105 sensor-card opacity-75">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                    <span class="font-semibold text-sm md:text-base text-white">Sensor F6</span>
+                </div>
+                <i class="fas fa-signal-slash text-red-500 text-sm"></i>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm mb-2">Blok F</p>
+            <div class="bg-red-500 bg-opacity-20 text-red-400 px-2 py-1 rounded text-xs font-medium text-center">
+                ✗ OFFLINE
+            </div>
+        </div>
+
+        <!-- Sensor G7 - Active -->
+        <div class="glass-effect rounded-xl p-4 transition-all duration-300 hover:scale-105 sensor-card">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                    <span class="font-semibold text-sm md:text-base text-white">Sensor G7</span>
+                </div>
+                <i class="fas fa-signal text-green-500 text-sm"></i>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm mb-2">Blok G</p>
+            <div class="bg-green-500 bg-opacity-20 text-green-400 px-2 py-1 rounded text-xs font-medium text-center">
+                ✓ AKTIF
+            </div>
+        </div>
+
+        <!-- Sensor H8 - Active -->
+        <div class="glass-effect rounded-xl p-4 transition-all duration-300 hover:scale-105 sensor-card">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                    <span class="font-semibold text-sm md:text-base text-white">Sensor H8</span>
+                </div>
+                <i class="fas fa-signal text-green-500 text-sm"></i>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm mb-2">Blok H</p>
+            <div class="bg-green-500 bg-opacity-20 text-green-400 px-2 py-1 rounded text-xs font-medium text-center">
+                ✓ AKTIF
+            </div>
+        </div>
     </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <!-- SENSOR A1 -->
-        <div
-            class="group bg-white rounded-2xl p-5 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <div class="flex items-center gap-4 mb-4">
-                <div
-                    class="bg-green-100 text-green-600 p-3 rounded-full transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Sensor A1</h3>
-                    <p class="text-sm text-gray-500">📍 Blok A</p>
-                </div>
-            </div>
-            <div
-                class="bg-green-50 text-green-700 font-medium text-sm rounded-full py-2 px-4 text-center transition-all duration-300 transform hover:bg-green-100 hover:scale-[0.98] hover:shadow-inner select-none">
-                ✅ AKTIF
-            </div>
-        </div>
-
-        <!-- SENSOR B2 -->
-        <div
-            class="group bg-white rounded-2xl p-5 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <div class="flex items-center gap-4 mb-4">
-                <div
-                    class="bg-green-100 text-green-600 p-3 rounded-full transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Sensor B2</h3>
-                    <p class="text-sm text-gray-500">📍 Blok B</p>
-                </div>
-            </div>
-            <div
-                class="bg-green-50 text-green-700 font-medium text-sm rounded-full py-2 px-4 text-center transition-all duration-300 transform hover:bg-green-100 hover:scale-[0.98] hover:shadow-inner select-none">
-                ✅ AKTIF
-            </div>
-        </div>
-
-        <!-- SENSOR C3 (TIDAK AKTIF) -->
-        <div
-            class="group bg-white rounded-2xl p-5 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <div class="flex items-center gap-4 mb-4">
-                <div
-                    class="bg-gray-300 text-gray-700 p-3 rounded-full transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Sensor C3</h3>
-                    <p class="text-sm text-gray-500">📍 Blok C</p>
-                </div>
-            </div>
-            <div
-                class="bg-gray-100 text-red-600 font-medium text-sm rounded-full py-2 px-4 text-center transition-all duration-300 transform hover:bg-red-100 hover:scale-[0.98] hover:shadow-inner select-none">
-                ❌ TIDAK AKTIF
-            </div>
-        </div>
-
-        <!-- SENSOR D4 -->
-        <div
-            class="group bg-white rounded-2xl p-5 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <div class="flex items-center gap-4 mb-4">
-                <div
-                    class="bg-green-100 text-green-600 p-3 rounded-full transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Sensor D4</h3>
-                    <p class="text-sm text-gray-500">📍 Blok D</p>
-                </div>
-            </div>
-            <div
-                class="bg-green-50 text-green-700 font-medium text-sm rounded-full py-2 px-4 text-center transition-all duration-300 transform hover:bg-green-100 hover:scale-[0.98] hover:shadow-inner select-none">
-                ✅ AKTIF
-            </div>
-        </div>
-
-        <!-- SENSOR E5 -->
-        <div
-            class="group bg-white rounded-2xl p-5 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <div class="flex items-center gap-4 mb-4">
-                <div
-                    class="bg-green-100 text-green-600 p-3 rounded-full transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Sensor E5</h3>
-                    <p class="text-sm text-gray-500">📍 Blok E</p>
-                </div>
-            </div>
-            <div
-                class="bg-green-50 text-green-700 font-medium text-sm rounded-full py-2 px-4 text-center transition-all duration-300 transform hover:bg-green-100 hover:scale-[0.98] hover:shadow-inner select-none">
-                ✅ AKTIF
-            </div>
-        </div>
-
-        <!-- SENSOR F6 (TIDAK AKTIF) -->
-        <div
-            class="group bg-white rounded-2xl p-5 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <div class="flex items-center gap-4 mb-4">
-                <div
-                    class="bg-gray-300 text-gray-700 p-3 rounded-full transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Sensor F6</h3>
-                    <p class="text-sm text-gray-500">📍 Blok F</p>
-                </div>
-            </div>
-            <div
-                class="bg-gray-100 text-red-600 font-medium text-sm rounded-full py-2 px-4 text-center transition-all duration-300 transform hover:bg-red-100 hover:scale-[0.98] hover:shadow-inner select-none">
-                ❌ TIDAK AKTIF
-            </div>
-        </div>
-
-        <!-- SENSOR G7 -->
-        <div
-            class="group bg-white rounded-2xl p-5 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <div class="flex items-center gap-4 mb-4">
-                <div
-                    class="bg-green-100 text-green-600 p-3 rounded-full transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Sensor G7</h3>
-                    <p class="text-sm text-gray-500">📍 Blok G</p>
-                </div>
-            </div>
-            <div
-                class="bg-green-50 text-green-700 font-medium text-sm rounded-full py-2 px-4 text-center transition-all duration-300 transform hover:bg-green-100 hover:scale-[0.98] hover:shadow-inner select-none">
-                ✅ AKTIF
-            </div>
-        </div>
-
-        <!-- SENSOR H8 -->
-        <div
-            class="group bg-white rounded-2xl p-5 shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
-            <div class="flex items-center gap-4 mb-4">
-                <div
-                    class="bg-green-100 text-green-600 p-3 rounded-full transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Sensor H8</h3>
-                    <p class="text-sm text-gray-500">📍 Blok H</p>
-                </div>
-            </div>
-            <div
-                class="bg-green-50 text-green-700 font-medium text-sm rounded-full py-2 px-4 text-center transition-all duration-300 transform hover:bg-green-100 hover:scale-[0.98] hover:shadow-inner select-none">
-                ✅ AKTIF
-            </div>
-        </div>
-
-    </div>
-</section>
+</div>
 
 @push('scripts')
 <script>
-    // OPTIONAL: Efek sentuh untuk mobile
-    document.querySelectorAll('.group').forEach(card => {
-        card.addEventListener('touchstart', function() {
-            this.classList.add('scale-105');
-            setTimeout(() => {
-                this.classList.remove('scale-105');
-            }, 200);
+    // Add click functionality for sensor cards
+    document.addEventListener('DOMContentLoaded', function() {
+        const sensorCards = document.querySelectorAll('.sensor-card');
+        
+        sensorCards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+                
+                // You can add more functionality here like opening sensor details
+            });
         });
     });
 </script>
