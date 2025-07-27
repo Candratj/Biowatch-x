@@ -1,5 +1,5 @@
 {{-- Pemantauan Langsung --}}
-<section id="pemantauan-langsung" class="relative max-w-7xl mx-auto px-4 py-8 lg:py-12 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+<section id="pemantauan-langsung" class="relative max-w-7xl mx-auto px-4 py-8 lg:py-12">
     
     <!-- Mobile Header -->
     <div class="lg:hidden mb-6">
@@ -19,12 +19,9 @@
             Sistem Kamera
         </span>
         <h2 class="text-4xl font-bold bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent mt-3 relative group">
-            Pemantauan Langsung (4 Kamera)
+            Kontrol Kamera
             <span class="absolute -bottom-2 left-1/2 w-0 h-1 bg-gradient-to-r from-emerald-600 to-teal-500 group-hover:w-48 transition-all duration-300 transform -translate-x-1/2"></span>
         </h2>
-        <p class="text-emerald-800 mt-6 max-w-2xl mx-auto transition-all duration-300 hover:text-emerald-900">
-            Pantau kondisi setiap kamera secara real-time dan interaktif.
-        </p>
     </div>
 
     <!-- Camera Status Summary (Mobile) -->

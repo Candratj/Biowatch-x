@@ -1,6 +1,6 @@
 {{-- Status Sistem --}}
 <section id="status-sistem"
-    class="relative max-w-7xl mx-auto px-4 py-8 overflow-hidden bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+    class="relative max-w-7xl mx-auto px-4 py-8 overflow-hidden">
     
     <!-- Mobile Header -->
     <div class="lg:hidden mb-6">

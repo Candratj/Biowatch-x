@@ -55,8 +55,8 @@
     </div>
 
     <div class="container max-w-6xl mx-auto px-4 relative z-10">
-        <!-- Navigation Buttons -->
-        <div class="flex justify-center items-center space-x-6">
+        <!-- Navigation Button -->
+        <div class="flex justify-center items-center">
             <!-- Dashboard Button -->
             <a href="{{ route('admin.dashboard') }}" class="group bg-white text-emerald-600 hover:bg-emerald-50 font-medium py-3 px-6 rounded-xl flex items-center space-x-3">
                 <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
@@ -64,22 +64,6 @@
                 </div>
                 <span class="font-medium">Buka Dashboard</span>
             </a>
-
-            <!-- Map Button -->
-            <button class="group bg-transparent border-2 border-white hover:bg-white text-white hover:text-emerald-600 font-medium py-3 px-6 rounded-xl flex items-center space-x-3">
-                <div class="w-8 h-8 bg-white bg-opacity-20 group-hover:bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-map"></i>
-                </div>
-                <span class="font-medium">Lihat Peta</span>
-            </button>
-
-            <!-- Live Camera Button -->
-            <button class="group bg-transparent border-2 border-white hover:bg-white text-white hover:text-emerald-600 font-medium py-3 px-6 rounded-xl flex items-center space-x-3">
-                <div class="w-8 h-8 bg-white bg-opacity-20 group-hover:bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-video"></i>
-                </div>
-                <span class="font-medium">Live Camera</span>
-            </button>
         </div>
 
         <!-- Bottom indicator -->

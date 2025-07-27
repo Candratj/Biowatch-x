@@ -3,7 +3,7 @@
 @section('title', 'BioWatch-x - Sistem Monitoring Cerdas')
 
 @section('content')
-    <div class="mobile-navigation-container">
+    <div class="navigation-container">
         {{-- Status Sistem --}}
         <div class="page-section active" id="status-page" data-page="status">
             @include('sections.status-sistem')
@@ -29,51 +29,65 @@
             @include('sections.faq')
         </div>
     </div>
-
-    {{-- Desktop shows all sections (unchanged) --}}
-    <div class="desktop-content hidden lg:block">
-        @include('sections.status-sistem')
-        @include('sections.kontrol-sensor')
-        @include('sections.pemantauan-langsung')
-        @include('sections.peringatan-terkini')
-        @include('sections.faq')
-    </div>
 @endsection
 
 @push('styles')
 <style>
-    /* Mobile Navigation Styles */
+    /* Navigation Styles for both mobile and desktop */
+    .navigation-container {
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .page-section {
+        display: none;
+        min-height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .page-section.active {
+        display: block;
+    }
+    
+    /* Mobile specific adjustments */
     @media (max-width: 1023px) {
-        .desktop-content {
-            display: none !important;
-        }
-        
-        .mobile-navigation-container {
-            position: relative;
-            min-height: calc(100vh - 80px); /* Account for footer height */
+        .navigation-container {
+            min-height: calc(100vh - 80px); /* Account for mobile footer height */
         }
         
         .page-section {
-            display: none;
             min-height: calc(100vh - 80px);
-        }
-        
-        .page-section.active {
-            display: block;
-        }
-        
-        /* Ensure smooth scrolling within each page */
-        .page-section {
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
         }
     }
     
-    /* Desktop shows all content normally */
+    /* Desktop specific adjustments */
     @media (min-width: 1024px) {
-        .mobile-navigation-container {
-            display: none;
+        .navigation-container {
+            min-height: calc(100vh - 120px); /* Account for desktop navbar height */
         }
+        
+        .page-section {
+            min-height: calc(100vh - 120px);
+            padding-top: 2rem;
+        }
+    }
+    
+    /* Page transition animations */
+    .page-section {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .page-section.active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
     }
 </style>
 @endpush
@@ -81,11 +95,16 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Mobile navigation functionality
-        const navButtons = document.querySelectorAll('.nav-btn');
+        // Navigation functionality for both mobile and desktop
+        const mobileNavButtons = document.querySelectorAll('.nav-btn[data-target]');
+        const desktopNavLinks = document.querySelectorAll('nav a[href^="#"]');
+        
         const pageMapping = {
             'status': 'status-page',
-            'sensors': 'sensors-page', 
+            'kontrol': 'sensors-page',
+            'pemantauan': 'cameras-page', 
+            'peringatan': 'alerts-page',
+            'sensors': 'sensors-page',
             'cameras': 'cameras-page',
             'alerts': 'alerts-page',
             'faq': 'faq-page'
@@ -93,24 +112,61 @@
         
         let currentPage = 'status';
         
-        // Only run on mobile
-        if (window.innerWidth < 1024) {
-            navButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetPage = this.getAttribute('data-target');
-                    if (targetPage && targetPage !== currentPage) {
-                        navigateToPage(targetPage);
-                    }
-                    
-                    // Update active state
-                    updateActiveNavigation(targetPage);
-                });
+        // Mobile navigation handlers
+        mobileNavButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetPage = this.getAttribute('data-target');
+                if (targetPage && targetPage !== currentPage) {
+                    navigateToPage(targetPage);
+                    updateMobileActiveNavigation(targetPage);
+                }
             });
-            
-            // Initialize first page
-            showPage('status');
+        });
+        
+        // Desktop navigation handlers
+        desktopNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    const targetPage = href.substring(1); // Remove # symbol
+                    const mappedPage = Object.keys(pageMapping).find(key => 
+                        targetPage.includes(key) || pageMapping[key].includes(targetPage)
+                    );
+                    
+                    if (mappedPage) {
+                        const finalTarget = mapToStandardPage(mappedPage);
+                        if (finalTarget !== currentPage) {
+                            navigateToPage(finalTarget);
+                            updateDesktopActiveNavigation(this);
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Add FAQ link handler for desktop (if exists in footer or other locations)
+        const faqLinks = document.querySelectorAll('a[href*="faq"], button[data-page="faq"]');
+        faqLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (currentPage !== 'faq') {
+                    navigateToPage('faq');
+                    updateMobileActiveNavigation('faq');
+                }
+            });
+        });
+        
+        function mapToStandardPage(page) {
+            const mapping = {
+                'kontrol': 'sensors',
+                'pemantauan': 'cameras',
+                'peringatan': 'alerts'
+            };
+            return mapping[page] || page;
         }
         
         function navigateToPage(targetPage) {
@@ -119,33 +175,58 @@
             
             if (!targetPageElement || !currentPageElement) return;
             
-            // Simple instant page switching - no animations
-            currentPageElement.classList.remove('active');
-            targetPageElement.classList.add('active');
+            // Add smooth transition
+            currentPageElement.style.opacity = '0';
+            currentPageElement.style.transform = 'translateX(-20px)';
             
-            // Scroll to top of new page
-            window.scrollTo(0, 0);
-            
-            // Update current page
-            currentPage = targetPage;
+            setTimeout(() => {
+                currentPageElement.classList.remove('active');
+                targetPageElement.classList.add('active');
+                
+                // Reset and animate new page
+                targetPageElement.style.opacity = '0';
+                targetPageElement.style.transform = 'translateX(20px)';
+                
+                setTimeout(() => {
+                    targetPageElement.style.opacity = '1';
+                    targetPageElement.style.transform = 'translateX(0)';
+                }, 50);
+                
+                // Scroll to top of new page
+                window.scrollTo(0, 0);
+                
+                // Update current page
+                currentPage = targetPage;
+                
+                // Update URL without page reload
+                const newUrl = `${window.location.pathname}?page=${targetPage}`;
+                history.pushState({page: targetPage}, '', newUrl);
+                
+            }, 150);
         }
         
         function showPage(pageKey) {
             // Hide all pages
             document.querySelectorAll('.page-section').forEach(page => {
                 page.classList.remove('active');
+                page.style.opacity = '0';
+                page.style.transform = 'translateX(20px)';
             });
             
             // Show target page
             const targetPage = document.getElementById(pageMapping[pageKey]);
             if (targetPage) {
                 targetPage.classList.add('active');
+                setTimeout(() => {
+                    targetPage.style.opacity = '1';
+                    targetPage.style.transform = 'translateX(0)';
+                }, 50);
                 currentPage = pageKey;
             }
         }
         
-        function updateActiveNavigation(activeTarget) {
-            navButtons.forEach(btn => {
+        function updateMobileActiveNavigation(activeTarget) {
+            mobileNavButtons.forEach(btn => {
                 const target = btn.getAttribute('data-target');
                 const iconContainer = btn.querySelector('div');
                 
@@ -165,23 +246,62 @@
             });
         }
         
+        function updateDesktopActiveNavigation(activeLink) {
+            desktopNavLinks.forEach(link => {
+                link.classList.remove('bg-white', 'bg-opacity-20');
+            });
+            activeLink.classList.add('bg-white', 'bg-opacity-20');
+        }
+        
+        // Initialize first page
+        showPage('status');
+        
         // Handle browser back/forward buttons
         window.addEventListener('popstate', function(e) {
-            if (window.innerWidth < 1024 && e.state && e.state.page) {
+            if (e.state && e.state.page) {
                 navigateToPage(e.state.page);
-                updateActiveNavigation(e.state.page);
+                updateMobileActiveNavigation(e.state.page);
+                
+                // Update desktop nav too
+                const matchingDesktopLink = Array.from(desktopNavLinks).find(link => {
+                    const href = link.getAttribute('href');
+                    return href && href.includes(e.state.page);
+                });
+                if (matchingDesktopLink) {
+                    updateDesktopActiveNavigation(matchingDesktopLink);
+                }
             }
         });
         
         // Check URL parameters on load
         const urlParams = new URLSearchParams(window.location.search);
         const initialPage = urlParams.get('page');
-        if (initialPage && pageMapping[initialPage] && window.innerWidth < 1024) {
+        if (initialPage && pageMapping[initialPage]) {
             showPage(initialPage);
-            updateActiveNavigation(initialPage);
+            updateMobileActiveNavigation(initialPage);
         }
         
-        // Add swipe gesture support for mobile (simplified)
+        // Add keyboard navigation support (Alt + Arrow keys)
+        document.addEventListener('keydown', function(e) {
+            if (e.altKey) {
+                const pages = ['status', 'sensors', 'cameras', 'alerts', 'faq'];
+                const currentIndex = pages.indexOf(currentPage);
+                
+                if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                    e.preventDefault();
+                    const prevPage = pages[currentIndex - 1];
+                    navigateToPage(prevPage);
+                    updateMobileActiveNavigation(prevPage);
+                } else if (e.key === 'ArrowRight' && currentIndex < pages.length - 1) {
+                    e.preventDefault();
+                    const nextPage = pages[currentIndex + 1];
+                    navigateToPage(nextPage);
+                    updateMobileActiveNavigation(nextPage);
+                }
+            }
+        });
+        
+        // Add swipe gesture support for mobile
         let startX = null;
         let startY = null;
         
@@ -200,7 +320,7 @@
             const diffY = startY - endY;
             
             // Only respond to horizontal swipes
-            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 80) {
                 const pages = ['status', 'sensors', 'cameras', 'alerts', 'faq'];
                 const currentIndex = pages.indexOf(currentPage);
                 
@@ -208,17 +328,45 @@
                     // Swipe left - next page
                     const nextPage = pages[currentIndex + 1];
                     navigateToPage(nextPage);
-                    updateActiveNavigation(nextPage);
+                    updateMobileActiveNavigation(nextPage);
                 } else if (diffX < 0 && currentIndex > 0) {
                     // Swipe right - previous page
                     const prevPage = pages[currentIndex - 1];
                     navigateToPage(prevPage);
-                    updateActiveNavigation(prevPage);
+                    updateMobileActiveNavigation(prevPage);
                 }
             }
             
             startX = null;
             startY = null;
+        });
+        
+        // Initialize active states
+        if (window.innerWidth < 1024) {
+            updateMobileActiveNavigation('status');
+        } else {
+            const firstDesktopLink = desktopNavLinks[0];
+            if (firstDesktopLink) {
+                updateDesktopActiveNavigation(firstDesktopLink);
+            }
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            // Reinitialize navigation states on resize
+            setTimeout(() => {
+                if (window.innerWidth < 1024) {
+                    updateMobileActiveNavigation(currentPage);
+                } else {
+                    const matchingLink = Array.from(desktopNavLinks).find(link => {
+                        const href = link.getAttribute('href');
+                        return href && href.includes(currentPage);
+                    });
+                    if (matchingLink) {
+                        updateDesktopActiveNavigation(matchingLink);
+                    }
+                }
+            }, 100);
         });
     });
 </script>

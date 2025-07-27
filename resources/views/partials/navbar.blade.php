@@ -53,12 +53,17 @@
                 <i class="fas fa-chart-line text-emerald-100 w-4"></i>
                 <span class="font-medium text-white text-sm">Status Sistem</span>
             </a>
+
+            <a href="#kontrol" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-300 group">
+                <i class="fas fa-cogs text-emerald-100 w-4"></i>
+                <span class="font-medium text-white text-sm">Pendeteksian</span>
+            </a>
             
             <a href="#pemantauan" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-300 group">
                 <i class="fas fa-video text-emerald-100 w-4"></i>
                 <span class="font-medium text-white text-sm">Pemantauan</span>
             </a>
-            
+
             <a href="#peringatan" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-300 group">
                 <i class="fas fa-bell text-emerald-100 w-4"></i>
                 <span class="font-medium text-white text-sm">Peringatan</span>
@@ -66,10 +71,10 @@
                     <span class="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">3</span>
                 </div>
             </a>
-            
-            <a href="#kontrol" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-300 group">
-                <i class="fas fa-cogs text-emerald-100 w-4"></i>
-                <span class="font-medium text-white text-sm">Kontrol</span>
+
+            <a href="#faq" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-300 group">
+                <i class="fas fa-question-circle text-emerald-100 w-4"></i>
+                <span class="font-medium text-white text-sm">FAQ</span>
             </a>
         </div>
     </nav>
@@ -98,6 +103,10 @@
                     <span class="relative z-10">Status Sistem</span>
                     <div class="absolute bottom-0 left-0 w-0 h-1 bg-emerald-200 group-hover:w-full transition-all duration-300"></div>
                 </a>
+                <a href="#kontrol" class="text-white py-2 px-4 rounded-lg hover:bg-white hover:bg-opacity-20 backdrop-blur-sm transition-all duration-300 transform hover:scale-105 hover:shadow-md relative overflow-hidden group">
+                    <span class="relative z-10">Pendeteksian</span>
+                    <div class="absolute bottom-0 left-0 w-0 h-1 bg-emerald-200 group-hover:w-full transition-all duration-300"></div>
+                </a>
                 <a href="#pemantauan" class="text-white py-2 px-4 rounded-lg hover:bg-white hover:bg-opacity-20 backdrop-blur-sm transition-all duration-300 transform hover:scale-105 hover:shadow-md relative overflow-hidden group">
                     <span class="relative z-10">Pemantauan</span>
                     <div class="absolute bottom-0 left-0 w-0 h-1 bg-emerald-200 group-hover:w-full transition-all duration-300"></div>
@@ -106,8 +115,8 @@
                     <span class="relative z-10">Peringatan</span>
                     <div class="absolute bottom-0 left-0 w-0 h-1 bg-emerald-200 group-hover:w-full transition-all duration-300"></div>
                 </a>
-                <a href="#kontrol" class="text-white py-2 px-4 rounded-lg hover:bg-white hover:bg-opacity-20 backdrop-blur-sm transition-all duration-300 transform hover:scale-105 hover:shadow-md relative overflow-hidden group">
-                    <span class="relative z-10">Kontrol</span>
+                <a href="#faq" class="text-white py-2 px-4 rounded-lg hover:bg-white hover:bg-opacity-20 backdrop-blur-sm transition-all duration-300 transform hover:scale-105 hover:shadow-md relative overflow-hidden group">
+                    <span class="relative z-10">FAQ</span>
                     <div class="absolute bottom-0 left-0 w-0 h-1 bg-emerald-200 group-hover:w-full transition-all duration-300"></div>
                 </a>
             </div>
