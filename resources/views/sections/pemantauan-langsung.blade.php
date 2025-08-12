@@ -38,11 +38,11 @@
         </div>
         <div class="grid grid-cols-3 gap-4 text-sm">
             <div class="text-center">
-                <div class="text-emerald-600 font-bold text-lg camera-active-count">3</div>
+                <div class="text-emerald-600 font-bold text-lg camera-active-count">6</div>
                 <div class="text-gray-500">Aktif</div>
             </div>
             <div class="text-center">
-                <div class="text-red-500 font-bold text-lg camera-offline-count">1</div>
+                <div class="text-red-500 font-bold text-lg camera-offline-count">2</div>
                 <div class="text-gray-500">Offline</div>
             </div>
             <div class="text-center">
@@ -263,6 +263,216 @@
         </div>
     </div>
 
+    <!-- Camera Card 5 (New Camera) -->
+    <div class="mt-4 lg:mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        
+        <!-- Camera Card 5 -->
+        <div class="bg-white rounded-3xl p-6 shadow-xl group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-emerald-100 rounded-xl flex items-center justify-center">
+                        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="text-emerald-600 font-semibold text-sm lg:text-base">Kamera 05</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="bg-red-500 text-white px-2 py-1 rounded-md text-xs font-semibold animate-pulse">LIVE</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer camera-toggle" checked data-camera="5">
+                        <div class="relative w-8 h-4 lg:w-10 lg:h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 lg:after:h-4 lg:after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="camera-preview bg-gray-800 rounded-2xl h-32 lg:h-40 flex items-center justify-center mb-4 relative overflow-hidden">
+                <div class="text-center camera-content">
+                    <svg class="w-8 h-8 lg:w-12 lg:h-12 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span class="text-white font-semibold text-sm lg:text-base">4K</span>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+
+            <div class="text-center mb-4">
+                <p class="text-gray-600 font-medium text-sm lg:text-base">Blok E - Tengah</p>
+                <p class="text-gray-400 text-xs">IP: 192.168.1.105</p>
+            </div>
+
+            <div class="flex justify-center space-x-4">
+                <button class="camera-action flex items-center space-x-1 text-emerald-600 hover:text-emerald-700 transition-colors duration-300 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <span>View</span>
+                </button>
+                <button class="camera-action flex items-center space-x-1 text-emerald-600 hover:text-emerald-700 transition-colors duration-300 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                    </svg>
+                    <span>Audio</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Camera Card 6 -->
+        <div class="bg-white rounded-3xl p-6 shadow-xl group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-emerald-100 rounded-xl flex items-center justify-center">
+                        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="text-emerald-600 font-semibold text-sm lg:text-base">Kamera 06</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="bg-red-500 text-white px-2 py-1 rounded-md text-xs font-semibold animate-pulse">LIVE</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer camera-toggle" checked data-camera="6">
+                        <div class="relative w-8 h-4 lg:w-10 lg:h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 lg:after:h-4 lg:after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="camera-preview bg-gray-800 rounded-2xl h-32 lg:h-40 flex items-center justify-center mb-4 relative overflow-hidden">
+                <div class="text-center camera-content">
+                    <svg class="w-8 h-8 lg:w-12 lg:h-12 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span class="text-white font-semibold text-sm lg:text-base">HD</span>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+
+            <div class="text-center mb-4">
+                <p class="text-gray-600 font-medium text-sm lg:text-base">Blok F - Timur Laut</p>
+                <p class="text-gray-400 text-xs">IP: 192.168.1.106</p>
+            </div>
+
+            <div class="flex justify-center space-x-4">
+                <button class="camera-action flex items-center space-x-1 text-emerald-600 hover:text-emerald-700 transition-colors duration-300 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <span>View</span>
+                </button>
+                <button class="camera-action flex items-center space-x-1 text-emerald-600 hover:text-emerald-700 transition-colors duration-300 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                    </svg>
+                    <span>Audio</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Camera Card 7 (OFFLINE) -->
+        <div class="bg-white rounded-3xl p-6 shadow-xl group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl opacity-75">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gray-100 rounded-xl flex items-center justify-center">
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="text-gray-400 font-semibold text-sm lg:text-base">Kamera 07</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="bg-gray-400 text-white px-2 py-1 rounded-md text-xs font-semibold">OFFLINE</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer camera-toggle" data-camera="7">
+                        <div class="relative w-8 h-4 lg:w-10 lg:h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 lg:after:h-4 lg:after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="camera-preview bg-gray-600 rounded-2xl h-32 lg:h-40 flex items-center justify-center mb-4 relative overflow-hidden">
+                <div class="text-center camera-content">
+                    <svg class="w-8 h-8 lg:w-12 lg:h-12 text-gray-300 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L18.364 5.636" />
+                    </svg>
+                    <span class="text-gray-300 font-semibold text-sm lg:text-base">OFFLINE</span>
+                </div>
+            </div>
+
+            <div class="text-center mb-4">
+                <p class="text-gray-400 font-medium text-sm lg:text-base">Blok G - Barat Laut</p>
+                <p class="text-gray-300 text-xs">IP: 192.168.1.107</p>
+            </div>
+
+            <div class="flex justify-center space-x-4">
+                <button class="camera-action flex items-center space-x-1 text-gray-400 cursor-not-allowed text-sm" disabled>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <span>View</span>
+                </button>
+                <button class="camera-action flex items-center space-x-1 text-gray-400 cursor-not-allowed text-sm" disabled>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                    </svg>
+                    <span>Audio</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Camera Card 8 -->
+        <div class="bg-white rounded-3xl p-6 shadow-xl group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-emerald-100 rounded-xl flex items-center justify-center">
+                        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="text-emerald-600 font-semibold text-sm lg:text-base">Kamera 08</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="bg-red-500 text-white px-2 py-1 rounded-md text-xs font-semibold animate-pulse">LIVE</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer camera-toggle" checked data-camera="8">
+                        <div class="relative w-8 h-4 lg:w-10 lg:h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 lg:after:h-4 lg:after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="camera-preview bg-gray-800 rounded-2xl h-32 lg:h-40 flex items-center justify-center mb-4 relative overflow-hidden">
+                <div class="text-center camera-content">
+                    <svg class="w-8 h-8 lg:w-12 lg:h-12 text-white mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span class="text-white font-semibold text-sm lg:text-base">HD</span>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+
+            <div class="text-center mb-4">
+                <p class="text-gray-600 font-medium text-sm lg:text-base">Blok H - Tenggara</p>
+                <p class="text-gray-400 text-xs">IP: 192.168.1.108</p>
+            </div>
+
+            <div class="flex justify-center space-x-4">
+                <button class="camera-action flex items-center space-x-1 text-emerald-600 hover:text-emerald-700 transition-colors duration-300 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <span>View</span>
+                </button>
+                <button class="camera-action flex items-center space-x-1 text-emerald-600 hover:text-emerald-700 transition-colors duration-300 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                    </svg>
+                    <span>Audio</span>
+                </button>
+            </div>
+        </div>
+        
     <!-- Quick Controls (Mobile) -->
     <div class="lg:hidden mt-6 grid grid-cols-1 gap-4">
         <div class="bg-white rounded-3xl p-6 shadow-xl">
@@ -346,7 +556,8 @@
                     // Update camera content
                     const qualityText = cameraContent.querySelector('span');
                     if (qualityText) {
-                        qualityText.textContent = cameraNumber <= 2 ? '4K' : 'HD';
+                        // Set quality based on camera number (1,5=4K, others=HD)
+                        qualityText.textContent = (cameraNumber == 1 || cameraNumber == 5) ? '4K' : 'HD';
                         qualityText.classList.remove('text-gray-300');
                         qualityText.classList.add('text-white');
                     }
