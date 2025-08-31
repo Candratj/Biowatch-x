@@ -35,23 +35,7 @@
 ## SLIDE 3: PENDAHULUAN
 
 ### Menjelaskan Mitra
-**UD. Sawit Jaya - Desa Kanamit, Kalimantan Tengah**
-- Ketua Mitra: Ibu Rusiah
-- Luas kebun: 13 hektar
-- Jarak dari kampus: 71,9 km
-- Jenis usaha: Perkebunan kelapa sawit
-- Hasil panen: 5-10 ton per bulan dengan 2x masa panen
-
-### Budidaya/Usaha yang Dilakukan Mitra
-- Perkebunan kelapa sawit sebagai mata pencaharian utama
-- Sistem pertanian konvensional dengan patroli manual
-- Penggunaan pagar kawat berduri untuk perlindungan
-- Belum ada sistem monitoring otomatis
-
-### Nama Mitra dan Lokasi Mitra
-- **Nama:** UD. Sawit Jaya
-- **Lokasi:** Desa Kanamit, Kecamatan Maliku, Kabupaten Pulang Pisau, Kalimantan Tengah
-- **Koordinat:** [sesuai Google Maps yang terlampir]
+UD. Sawit Jaya merupakan kelompok usaha perkebunan kelapa sawit yang berlokasi di Desa Kanamit, Kecamatan Maliku, Kabupaten Pulang Pisau, Kalimantan Tengah. Kelompok ini dipimpin oleh Ibu Rusiah dan mengelola lahan seluas 13 hektar dengan jarak 71,9 km dari Universitas Muhammadiyah Banjarmasin. Mitra menjalankan sistem pertanian konvensional dengan produktivitas 5-10 ton per bulan melalui 2 kali masa panen. Saat ini, mitra masih mengandalkan patroli manual dan pagar kawat berduri untuk mengamankan kebun dari gangguan satwa liar, namun belum memiliki sistem monitoring otomatis yang efektif.
 
 ---
 
